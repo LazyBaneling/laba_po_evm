@@ -1,4 +1,4 @@
-// ConsoleApplication8.cpp: определяет точку входа для консольного приложения.
+// ConsoleApplication8.cpp: РѕРїСЂРµРґРµР»СЏРµС‚ С‚РѕС‡РєСѓ РІС…РѕРґР° РґР»СЏ РєРѕРЅСЃРѕР»СЊРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ.
 //
 
 #include "stdafx.h"
@@ -61,10 +61,27 @@ void make_world()
 
 void shift_world()
 {
-	for (int i=0, i)
+	for (int j = 0, j < length-1, ++j)
+	 for (int i = 0, i < maxheight, ++i) world[i][j] = world[i][j+1];
+	if (distance==7)
+	{
+		make_an_obstacle();
+		distance = 0;
+		for (int i = 0, i <= edge1, ++i) world[i][j] = "#";
+		for (int i = maxheight, i >= 0, --i)  world[i][j] = "#";
+	}
+	distance++;
 }
 
-
+void show_world()
+{
+	system(cls);
+	for (int i = 0, i < length, ++i)
+	{
+		for (int j = 0, j < maxheight, ++j) cout << world[i][j];
+		cout << endl;
+	}
+}
 
 
 
@@ -75,6 +92,12 @@ void shift_world()
 
 int main()
 {
+	make_world();
+	for (; ; );
+	shift_world();
+	show_world();
+	getchar();
+	getchar();
 
     return 0;
 }
