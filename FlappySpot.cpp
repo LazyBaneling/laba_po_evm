@@ -15,7 +15,7 @@ ofstream outp;
 char world[30][21];
 int check[30][21];
 int highscore;
-int contr, key = 0, score = 0, t = 0, ft = 0, x = 0, y = 0, godmode=0;
+int key = 0, score = 0, t = 0, ft = 0, x = 0, y = 0, godmode=0;
 bool err;
 
 void game();
